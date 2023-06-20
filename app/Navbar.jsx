@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({genres}) => {
   const genresData = [
     { id: "all", label: "All" },
     { id: 28, label: "Action" },
@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="relative flex whitespace-nowrap scrollbar-hide overflow-x-scroll space-x-6 px-4 md:px-16 md:space-x-10 mt-2">
+    <nav className="relative flex whitespace-nowrap scrollbar-hide overflow-x-scroll space-x-6 px-4 md:px-16 md:space-x-10">
       {genresData.map(({ id, label }) => (
         <button
           key={id}

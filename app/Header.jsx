@@ -10,7 +10,7 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 
 const Header = () => {
   return (
-    <header className="flex flex-col items-center justify-center px-4 md:flex-row md:justify-between md:px-16 h-auto">
+    <header className="flex flex-col items-center justify-center px-4 md:flex-row md:justify-between md:px-16 h-auto mb-4">
       {/* Icons */}
       <div className="flex justify-evenly pt-4 md:pb-2">
         <HeaderIcon title="home" Icon={AiOutlineHome} />
