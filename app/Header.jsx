@@ -21,7 +21,7 @@ const Header = () => {
         <HeaderIcon title="account" Icon={MdOutlineAccountCircle} />
       </div>
       {/* logo */}
-      <div>
+      <div className="cursor-pointer">
         <Image src={logo} alt="logo" className="object-contain" />
       </div>
     </header>
