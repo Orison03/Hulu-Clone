@@ -1,8 +1,8 @@
 import React from "react";
 
-const Navbar = ({genres}) => {
+const Navbar = ({ genres, setGenre }) => {
   const genresData = [
-    { id: "all", label: "All" },
+    { id: "all", label: "all" },
     { id: 28, label: "Action" },
     { id: 35, label: "Comedy" },
     { id: 18, label: "Drama" },
@@ -19,12 +19,24 @@ const Navbar = ({genres}) => {
     { id: 10402, label: "Music" },
   ];
 
+  const cur = genres
+
+  const filterMovies = (genre) => {
+    const newMoviesData =
+      genre === "all"
+        ? genres
+        : genres.filter((movie) => movie.genre_ids.includes(genre));
+
+    setGenre(newMoviesData.length <= 2 ? [...cur] : newMoviesData)
+  };
+
   return (
     <nav className="relative flex whitespace-nowrap scrollbar-hide overflow-x-scroll space-x-6 px-4 md:px-16 md:space-x-10">
       {genresData.map(({ id, label }) => (
         <button
           key={id}
-          className="text-lg hover:scale-125 transition-all duration-100 ease-in-out hover:text-[#75B813] focus:text-[#75B813]"
+          onClick={() => filterMovies(id)}
+          className="text-lg hover:scale-125 transition-all duration-100 ease-in-out md:hover:text-[#75B813] focus:text-[#75B813]"
         >
           {label}
         </button>

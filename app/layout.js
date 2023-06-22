@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
         />
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   );
 }
